@@ -1,0 +1,90 @@
+{
+  "version": "3.3.8",
+  "folderName": "mxm_service_321",
+  "description": "鲸图2.0的后端API",
+  "runEnvironment":"dev",
+  "outputPath": "src",
+  "env": {
+    "dev": {
+      "url": "/mock",
+      "timeout": "12000"
+    },
+    "test": {
+      "url": "http://10.114.10.79:5000/api",
+      "timeout": "12000"
+    },
+    "production": {
+      "url": "/proxy",
+      "timeout": "12000"
+    }
+  },
+  "modules": [
+     {
+      "name": "DataSet",
+      "prefix": "",
+      "api": {
+        "addDataSet": {
+          "url": "/dataset/addDataSet",
+          "method": "get",
+          "useParams":true,
+          "doc": {
+            "method": "添加节点"
+          },
+          "request":{
+            "name":"string!",
+            "age":"number!",
+            "nickname":"string"
+          },
+          "response":{
+            "code":"string",
+            "message":"string"
+          }
+        },
+        "dataSet": {
+          "url": "/dataset/dataSet/:id",
+          "method": "post",
+          "request":{
+            "name":"string!",
+            "nickname":"string",
+            "isAdmin":"boolean"
+          },
+          "response":{
+            "code":"string",
+            "message":"string",
+            "data":"any"
+          }
+        },
+        "doshit": {
+          "url": "/dataset/dataSet/:id",
+          "method": "post"
+        },
+        "pigname": {
+          "url": "/dataset/dataSet/:id",
+          "method": "post"
+        },
+        "undksldataSet": {
+          "url": "/dataset/dataSet/:id",
+          "method": "post"
+        },
+        "dataGet": {
+          "url": "/dataset/dataSet/:id",
+          "method": "get"
+        },
+        "getDataSetList": {
+          "url": "/dataset/dataset/getDataSetList",
+          "method": "post"
+        }
+      }
+    },
+    {
+      "name": "DataSource",
+      "prefix": "",
+      "api": {
+        "dataSource": {
+          "url": "/dataset/dataSource/:id",
+          "method": "get"
+        }
+      }
+    }
+  ]
+}
